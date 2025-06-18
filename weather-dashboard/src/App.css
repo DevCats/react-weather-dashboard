@@ -1,1 +1,95 @@
-@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --bg-primary: #221B22;
+    --bg-secondary: #2E242E;
+    --primary-font-colour: #AEECEF;
+    --accent-colour: #F54E00;
+}
+
+* {
+    /* Include padding and border in total width and height of elements */
+    box-sizing: border-box; 
+    /* Remove padding, border & margin from all elements */
+    padding: 0;
+    border: 0;
+    margin: 0;   
+}
+
+html {
+    /* Reduce font size for the document to 10px (Assuming browser is set to have a medium text size) */
+    font-size: 62.5%;
+    /* text-align: center; */
+    font-family: Quicksand, sans-serif;
+    color: var(--primary-font-colour);
+}
+
+/* Set font size of headings in em */
+h1 { font-size: 2.4rem; } /* 24px */
+h2 { font-size: 2.2rem; } /* 22px */
+h3 { font-size: 2.0rem; } /* 20px */
+h4 { font-size: 1.8rem; } /* 18px */
+h5 { font-size: 1.6rem; } /* 16px */
+h6 { font-size: 1.4rem; } /* 14px */
+p { font-size: 1.2rem; }  /* 12px */
+
+
+
+/* --------------- */
+/* Nav Menu Styles */
+/* --------------- */
+.nav-wrapper {
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 8rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-location p {
+    max-width: 10rem;
+    min-width: 6.4rem;
+    margin-left: 0.5rem;
+}
+
+.nav-search {
+    border: 0.1rem solid var(--accent-colour);
+    border-radius: 2rem;
+    padding: 0 0.6rem;
+}
+
+.nav-search input {
+    max-width: 12rem;
+    margin-left: 0.5rem;
+
+    height: 3.6rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--primary-font-colour);
+}
+
+.nav-settings {
+    cursor: pointer;
+}
+
+.nav-icon {
+    width: 2.4rem;
+}
+
+/* ------------------- */
+/* Main Content Styles */
+/* ------------------- */
+.main-wrapper {
+    background-color: var(--bg-primary);
+    height: calc(100vh - 8rem);
+    padding: 1.6rem 3.2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
