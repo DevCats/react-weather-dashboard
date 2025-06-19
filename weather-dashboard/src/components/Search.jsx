@@ -1,4 +1,5 @@
 const Search = () => {
+    
     return (
         <>
             <div className="nav-item nav-search">
