@@ -1,11 +1,11 @@
-const AdditionalWeatherInfo = ({ _value, _name, _units='' }) => {
+const AdditionalWeatherInfo = ({ _value='--', _name, _units='', _icon }) => {
 
     return (
         <>
             <div className="widget-wrapper">
                 <div className="widget">
+                    {_icon}
                     <div className="info">
-                        {/* <div className="widget-icon"></div> */}
                         <div className="value">{_value} {_units}</div>
                         <div className="name">{_name}</div>
                     </div>
