@@ -40,7 +40,7 @@ const CurrentWeather = ({ currentWeather }) => {
                     />
                 </div>
             </div>
-            {console.log(currentWeather)}
+            {/* {console.log(currentWeather)} */}
         </>
     )
 }

@@ -1,4 +1,3 @@
-
 export class Geolocation {
     constructor () {
         this.options = {
@@ -14,6 +13,7 @@ export class Geolocation {
             if (coords) {
                 localStorage.setItem('latitude', coords.latitude);
                 localStorage.setItem('longitude', coords.longitude);
+                return `${coords.latitude},${coords.longitude}`;
             }
         };
     }
