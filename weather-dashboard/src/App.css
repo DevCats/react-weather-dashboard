@@ -93,3 +93,57 @@ p { font-size: 1.2rem; }  /* 12px */
     overflow-y: auto;
 }
 
+/* ---------------------- */
+/* Current Weather Styles */
+/* ---------------------- */
+.current-weather-wrapper {
+    height: 32rem;
+    display: flex;
+    border: 0.1rem solid var(--accent-colour);
+    border-radius: 1rem;
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.temp-value .real-temp {
+    font-size: 2.4rem;
+}
+
+.temp-value .feels-temp {
+    font-size: 1.8rem;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    height: auto;
+    margin-left: 1rem;
+}
+
+.widget-wrapper {
+    width: 16rem;
+    border: 0.1rem solid var(--accent-colour);
+    border-radius: 1rem;
+}
+
+.widget {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+}

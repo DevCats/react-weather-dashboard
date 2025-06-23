@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetchData } from '../api/index.js'
+import CurrentWeather from "./CurrentWeather.jsx"
+
 const Main = () => {
     const [currentWeather, setCurrentWeather] = useState('');
 
@@ -14,11 +16,13 @@ const Main = () => {
             console.log(error); // !!! TODO: Error feedback for user
         })
     }, []);
-    
+
     return (
         <>
             <div className="main-wrapper">
-
+                <CurrentWeather 
+                    currentWeather={ currentWeather }
+                />
             </div>
         </>
     )
