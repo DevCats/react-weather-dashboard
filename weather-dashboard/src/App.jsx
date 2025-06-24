@@ -5,11 +5,16 @@ import Nav from './components/Nav.jsx'
 import Main from './components/Main.jsx'
 import './App.css'
 
+// !!! TODO: 
+    // - Possible to further separate API logic?
+    // - Better way to separate hourly and daily data?
+    // - Make mobile responsive - currently developed at 375px viewport width
+
 function App() {
     const [coords, setCoords] = useState('');
     const [currentLocation, setCurrentLocation] = useState('');
     const [currentWeather, setCurrentWeather] = useState('');
-    const [hourlyForecast, setHourlyForecast] = useState('');
+    const [forecastData, setForecastData] = useState('');
 
     useEffect(() => {
         getCoords();
@@ -20,7 +25,6 @@ function App() {
         let client = fetchData('current.json', `${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}`);
         let data = client.request();
         data.then((response) => {
-            // console.log(response.data);
             setCurrentLocation(response.data.location);
             setCurrentWeather(response.data.current);
         })
@@ -30,14 +34,22 @@ function App() {
     }, [coords]);
 
     useEffect(() => {
-        let client = fetchData('forecast.json', `${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}&days=7`);
+        let client = fetchData('forecast.json', `${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}&days=8`);
         let data = client.request();
+        let forecastData = {};
+
         data.then((response) => {
-            let filteredData = response.data.forecast.forecastday[0].hour.filter((obj) => {
+            let hourlyData = response.data.forecast.forecastday[0].hour.filter((obj) => {
                 return obj.time_epoch > (Date.now() / 1000);
-            })
-            console.log(filteredData);
-            setHourlyForecast(filteredData);
+            });
+
+            let dailyData = response.data.forecast.forecastday;
+            dailyData.shift();
+
+            forecastData.hourlyData = hourlyData;
+            forecastData.dailyData = dailyData;
+
+            setForecastData(forecastData);
         })
         .catch((error) => {
             console.error(error); // !!! TODO: Error feedback for user
@@ -52,7 +64,7 @@ function App() {
             />
             <Main 
                 currentWeather={ currentWeather }
-                hourlyForecast={ hourlyForecast }
+                forecastData={ forecastData }
             />
         </>
     )

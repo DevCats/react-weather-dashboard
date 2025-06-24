@@ -217,7 +217,8 @@ p { font-size: 1.2rem; }  /* 12px */
     border-radius: 1rem;
 }
 
-.forecast-widget .time {
+.forecast-widget .time,
+.forecast-widget .day {
     position: absolute;
     top: -2rem;
     font-size: 1.4rem;
@@ -240,6 +241,10 @@ p { font-size: 1.2rem; }  /* 12px */
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.forecast-widget .max-temp {
+    margin-right: 0.5rem;
 }
 
 .forecast-widget .forecast-wind {

@@ -1,6 +1,9 @@
 import { WiRaindrop, WiStrongWind, WiCloud, WiHumidity, WiDaySunny, WiFog } from 'weather-icons-react'
 import AdditionalWeatherInfo from "./AdditionalWeatherInfo.jsx"
 
+// TODO:
+    // - Find a font that renders the degrees celsius unit (&#8451;) properly
+
 const CurrentWeather = ({ currentWeather }) => {
     const { cloud, condition, temp_c, feelslike_c, humidity, precip_mm, uv, vis_km, wind_kph } = currentWeather;
 

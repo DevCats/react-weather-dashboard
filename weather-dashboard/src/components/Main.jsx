@@ -1,7 +1,7 @@
 import CurrentWeather from './CurrentWeather.jsx'
 import Forecast from './Forecast.jsx'
 
-const Main = ({ currentWeather, hourlyForecast }) => {
+const Main = ({ currentWeather, forecastData }) => {
 
     return (
         <>
@@ -12,7 +12,12 @@ const Main = ({ currentWeather, hourlyForecast }) => {
                 <Forecast 
                     type='hourly' 
                     title='Hourly Forecast'
-                    hourlyForecast={ hourlyForecast }
+                    forecastData={ forecastData.hourlyData }
+                />
+                <Forecast 
+                    type='daily' 
+                    title='7-Day Forecast'
+                    forecastData={ forecastData.dailyData }
                 />
             </div>
         </>
