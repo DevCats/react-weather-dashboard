@@ -11,7 +11,8 @@ const Main = ({ currentWeather, hourlyForecast }) => {
                 />
                 <Forecast 
                     type='hourly' 
-                    title='Hourly Forecast' 
+                    title='Hourly Forecast'
+                    hourlyForecast={ hourlyForecast }
                 />
             </div>
         </>

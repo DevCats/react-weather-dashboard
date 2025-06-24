@@ -1,4 +1,4 @@
-import { WiRaindrops, WiStrongWind, WiCloud, WiHumidity, WiDaySunny, WiFog } from 'weather-icons-react'
+import { WiRaindrop, WiStrongWind, WiCloud, WiHumidity, WiDaySunny, WiFog } from 'weather-icons-react'
 import AdditionalWeatherInfo from "./AdditionalWeatherInfo.jsx"
 
 const CurrentWeather = ({ currentWeather }) => {
@@ -8,7 +8,7 @@ const CurrentWeather = ({ currentWeather }) => {
         <>
             <div className="current-weather-wrapper">
                 <div className="current-weather">
-                    <div className="weather-icon">
+                    <div className="current-weather-icon">
                         <img src={currentWeather ? currentWeather.condition.icon : null}></img>
                     </div>
                     <div className="temp-summary-wrapper">
@@ -24,7 +24,7 @@ const CurrentWeather = ({ currentWeather }) => {
                         _value={ precip_mm }
                         _units={ 'mm/h' }
                         _name={ 'Precipitation' }
-                        _icon={ <WiRaindrops size={32} color={'#AEECEF'} /> }
+                        _icon={ <WiRaindrop size={32} color={'#AEECEF'} /> }
                     />
                     <AdditionalWeatherInfo 
                         _value={ wind_kph }

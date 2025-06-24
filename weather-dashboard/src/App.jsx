@@ -52,7 +52,7 @@ function App() {
             />
             <Main 
                 currentWeather={ currentWeather }
-                forecast={ hourlyForecast }
+                hourlyForecast={ hourlyForecast }
             />
         </>
     )

@@ -2,8 +2,8 @@ const AdditionalWeatherInfo = ({ _value='--', _name, _units='', _icon }) => {
 
     return (
         <>
-            <div className="widget-wrapper">
-                <div className="widget">
+            <div className="current-widget-wrapper">
+                <div className="current-widget">
                     {_icon}
                     <div className="info">
                         <div className="value">{_value} {_units}</div>
