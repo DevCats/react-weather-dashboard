@@ -24,7 +24,6 @@ const HourlyForecast = ({ hourData }) => {
                     </div>
                     <div className="forecast-wind-direction" style={{ transform: `rotate(${hourData.wind_degree}deg)` }}>
                         <WiWindDeg size={16} color={'#AEECEF'} />
-                        {/* {hourData.wind_degree} */}
                     </div>
                 </div>
             </div>

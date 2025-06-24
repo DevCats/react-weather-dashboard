@@ -1,4 +1,5 @@
 import HourlyForecast from './HourlyForecast.jsx'
+import HorizontalScrollWrapper from './HorizontalScrollWrapper.jsx'
 
 const Forecast = ({ title, hourlyForecast }) => {
 
@@ -7,17 +8,17 @@ const Forecast = ({ title, hourlyForecast }) => {
             <div className="forecast-wrapper">
                 <div>
                     <h3>{title}</h3>
-                    <div className="forecast-widget-wrapper">
+                    <HorizontalScrollWrapper className='forecast-widget-wrapper'>
                         {hourlyForecast ?
-                        hourlyForecast.map((hour) => (
-                            <div key={hour.time}>
-                                <HourlyForecast 
-                                    hourData={ hour }
-                                />
-                            </div>
-                        ))
+                            hourlyForecast.map((hour) => (
+                                <div key={hour.time}>
+                                    <HourlyForecast 
+                                        hourData={ hour }
+                                    />
+                                </div>
+                            ))
                         : '--'}
-                    </div>
+                    </HorizontalScrollWrapper>
                 </div>
             </div>
         </>
