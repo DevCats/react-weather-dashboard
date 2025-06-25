@@ -9,6 +9,7 @@ import './App.css'
     // - Possible to further separate API logic?
     // - Better way to separate hourly and daily data?
     // - Make mobile responsive - currently developed at 375px viewport width
+    // - Ensure lat/lon localStorage items are cleared before render
 
 function App() {
     const [coords, setCoords] = useState('');
@@ -16,11 +17,13 @@ function App() {
     const [currentWeather, setCurrentWeather] = useState('');
     const [forecastData, setForecastData] = useState('');
 
+    // Get coordinates from device location
     useEffect(() => {
         getCoords();
         setCoords(`${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}`);
     }, []);
 
+    // Get current weather data based on device location
     useEffect(() => {
         let client = fetchData('current.json', `${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}`);
         let data = client.request();
@@ -33,6 +36,7 @@ function App() {
         });
     }, [coords]);
 
+    // Get forecasted weather data based on device location
     useEffect(() => {
         let client = fetchData('forecast.json', `${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}&days=8`);
         let data = client.request();
@@ -61,6 +65,8 @@ function App() {
         <>
             <Nav 
                 currentLocation={ currentLocation }
+                coords={ coords }
+                setCoords={ setCoords }
             />
             <Main 
                 currentWeather={ currentWeather }

@@ -6,7 +6,7 @@ import Settings from "./Settings.jsx"
     // - Start/Finish the Search component
     // - Start/Finish the Settings component
 
-const Nav = ({ currentLocation }) => {
+const Nav = ({ currentLocation, coords, setCoords }) => {
 
     return (
         <>
@@ -14,7 +14,10 @@ const Nav = ({ currentLocation }) => {
                 <Location 
                     currentLocation={ currentLocation }
                 />
-                <Search />
+                <Search 
+                    coords={ coords }
+                    setCoords={ setCoords }
+                />
                 <Settings />
             </nav>
         </>
