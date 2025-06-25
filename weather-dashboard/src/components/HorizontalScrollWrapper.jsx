@@ -9,14 +9,17 @@ const HorizontalScrollWrapper = ({ children, className='' }) => {
 
     // Handle mouse events for desktop browsers
     const handleMouseDown = (_event) => {
-        // _event.preventDefault();
+        // X position at the beginning of mouse movement
         const oldX = _event.pageX;
         let scrollLeft = scrollRef.current.scrollLeft;
 
         const handleMouseMove = (_event) => {
+            // X position at the end of mouse movement
             const newX = _event.pageX;
+            // Calculate difference in X position
             const offset = newX - oldX;
 
+            // Calculate the new X position for the element
             scrollRef.current.scrollLeft = scrollLeft - offset;
         };
 
@@ -31,7 +34,6 @@ const HorizontalScrollWrapper = ({ children, className='' }) => {
 
     // Handle touch events for mobile devices
     const handleTouchStart = (_event) => {
-        // _event.preventDefault();
         const touch = _event.touches[0];
         const oldX = touch.pageX;
         let scrollLeft = scrollRef.current.scrollLeft;

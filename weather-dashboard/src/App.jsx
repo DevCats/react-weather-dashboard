@@ -36,20 +36,25 @@ function App() {
         });
     }, [coords]);
 
-    // Get forecasted weather data based on device location
+    // Get hourly/daily forecasted weather data based on device location
     useEffect(() => {
         let client = fetchData('forecast.json', `${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}&days=8`);
         let data = client.request();
         let forecastData = {};
 
         data.then((response) => {
+            // Get hourly forecast data
             let hourlyData = response.data.forecast.forecastday[0].hour.filter((obj) => {
+                // Only return hourly data that is in the future
                 return obj.time_epoch > (Date.now() / 1000);
             });
 
+            // Get daily forecast data
             let dailyData = response.data.forecast.forecastday;
+            // Remove current day from array
             dailyData.shift();
 
+            // Add both data sets to a single object
             forecastData.hourlyData = hourlyData;
             forecastData.dailyData = dailyData;
 

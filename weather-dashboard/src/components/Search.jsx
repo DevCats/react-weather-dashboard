@@ -8,12 +8,12 @@ const Search = ({ coords, setCoords }) => {
 
     const onSearch = (_event) => {
         setSearchTerm(_event.target.value);
-
         let client = fetchData('search.json', `${_event.target.value}`);
         let data = client.request();
         data.then((response) => {
             console.log(response.data);
             setSearchResults(response.data);
+            // If response.data.length > 0 this will be truthy
             setShowResults(response.data.length);
         })
         .catch((error) => {
@@ -23,6 +23,7 @@ const Search = ({ coords, setCoords }) => {
 
     const changeCoords = (_location) => {
         let coordinates = `${_location.lat},${_location.lon}`;
+        // Update lat/lon values in localStorage
         if (localStorage.getItem('latitude') !== null) {
             localStorage.setItem('latitude', _location.lat);
         }

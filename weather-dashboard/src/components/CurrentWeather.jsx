@@ -49,7 +49,6 @@ const CurrentWeather = ({ currentWeather }) => {
                     />
                     <AdditionalWeatherInfo 
                         _value={ uv }
-                        // _units={ '' }
                         _name={ 'UV Index' }
                         _icon={ <WiDaySunny size={32} color={'#AEECEF'} /> }
                     />
@@ -61,7 +60,6 @@ const CurrentWeather = ({ currentWeather }) => {
                     />
                 </div>
             </div>
-            {/* {console.log(currentWeather)} */}
         </>
     )
 }
