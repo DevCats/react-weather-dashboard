@@ -7,7 +7,6 @@ const Forecast = ({ type, title, forecastData }) => {
     return (
         <>
             <div className="forecast-wrapper">
-                <div>
                     <h3>{title}</h3>
                     <HorizontalScrollWrapper className='forecast-widget-wrapper'>
                         {forecastData ? 
@@ -22,7 +21,6 @@ const Forecast = ({ type, title, forecastData }) => {
                             ))
                         : '--'}
                     </HorizontalScrollWrapper>
-                </div>
             </div>
         </>
     )

@@ -7,6 +7,9 @@ import './App.css'
 
 // !!! TODO: 
     // - Possible to further separate API logic?
+        // - Dedicated node server to handle API requests
+            // - Also ensures API keys aren't exposed to the client
+            // - Allows for better error handling
     // - Better way to separate hourly and daily data?
     // - Make mobile responsive - currently developed at 375px viewport width
     // - Ensure lat/lon localStorage items are cleared before render
