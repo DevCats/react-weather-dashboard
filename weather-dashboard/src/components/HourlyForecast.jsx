@@ -1,10 +1,5 @@
 import { WiThermometer, WiRaindrop, WiStrongWind, WiWindDeg } from 'weather-icons-react'
 
-// TODO:
-    // - Play around with size - font/icon size similar to CurrentWeather?
-    // - Include units
-    // - What other data could be included?
-
 const HourlyForecast = ({ hourData }) => {
     const { time, condition, temp_c, precip_mm, wind_kph, wind_degree } = hourData;
 

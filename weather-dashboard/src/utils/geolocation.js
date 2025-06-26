@@ -1,7 +1,3 @@
-// !!! TODO:
-    // - When getting coords, if geolocation permission is 'prompt' alert user they need to give permission
-        // and then get the coordinates
-
 // Class containing the _success, _errors & _options parameters for navigator.geolocation.getCurrentPosition()
 export class Geolocation {
     constructor () {
@@ -11,7 +7,7 @@ export class Geolocation {
             maximumAge: 0
         };
         this.errors = (_error) => {
-            console.error(`ERROR(${_error.code}): ${_error.message}`); // !!! TODO: Error feedback for user
+            console.error(`ERROR(${_error.code}): ${_error.message}`);
         };
         this.success = (_position) => {
             // Convert to JSON object
@@ -35,20 +31,18 @@ export const getCoords = () => {
         navigator.permissions.query({ name: 'geolocation' })
             .then((result) => {
                 switch (result.state) {
-                    // If permission is 'granted' get device coordinates
-                    // If permission is 'prompt' get device coordinates depending on whether they allow access
                     case 'granted':
                     case 'prompt':
                         navigator.geolocation.getCurrentPosition(GeoLoc.success, GeoLoc.errors, GeoLoc.options);
                         break;
                     case 'denied':
-                        console.error('Location permissions have been denied. Please check your settings'); // !!! TODO: Error feedback for user
+                        console.error('Location permissions have been denied. Please check your settings');
                         break;
                     default:
                         return;
                 }
             });
     } else {
-        console.log('Geolocation is not supported by this browser.'); // !!! TODO: Error feedback for user
+        console.log('Geolocation is not supported by this browser.');
     }
 }

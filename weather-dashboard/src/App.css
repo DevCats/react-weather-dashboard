@@ -20,7 +20,7 @@ html {
     /* Reduce font size for the document to 10px (Assuming browser is set to have a medium text size) */
     font-size: 62.5%;
     /* text-align: center; */
-    font-family: Quicksand, sans-serif; /* !!! TODO: Pick a font that renders &#8451; (degrees celsius) */
+    font-family: Quicksand, sans-serif;
     color: var(--primary-font-colour);
 }
 

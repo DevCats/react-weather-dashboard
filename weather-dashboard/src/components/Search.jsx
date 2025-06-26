@@ -17,7 +17,7 @@ const Search = ({ coords, setCoords }) => {
             setShowResults(response.data.length);
         })
         .catch((error) => {
-            console.error(error); // !!! TODO: Error feedback for user
+            console.error(error);
         });
     }
 

@@ -2,9 +2,6 @@ import Location from "./Location.jsx"
 import Search from "./Search.jsx"
 import Settings from "./Settings.jsx"
 
-// !!! TODO:
-    // - Start/Finish the Settings component
-
 const Nav = ({ currentLocation, coords, setCoords }) => {
 
     return (

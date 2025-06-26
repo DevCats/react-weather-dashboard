@@ -6,13 +6,37 @@ import Main from './components/Main.jsx'
 import './App.css'
 
 // !!! TODO: 
-    // - Possible to further separate API logic?
-        // - Dedicated node server to handle API requests
-            // - Also ensures API keys aren't exposed to the client
-            // - Allows for better error handling
-    // - Better way to separate hourly and daily data?
-    // - Make mobile responsive - currently developed at 375px viewport width
-    // - Ensure lat/lon localStorage items are cleared before render
+    // General:
+        // - Find a font that correctly renders degrees celsius symbol (&#8451;)
+        // - Test CSS breakpoints on actual devices
+        // - Create Error component to display errors to client
+        // - Create a Loader component to display when components are rendering
+
+    // Geolocation:
+        // - Data should only be retrieved IF allowed
+            // - Currently API fires before user has allowed/denied location access
+                // - Doesn't use their location though, passes undefined as both lat and lon
+        // - Error handling
+    
+    // API:
+        // - Create node server to handle requests to API
+            // - Error handling
+            // - Properly hide env variables
+
+    // Settings:
+        // - Toggle to change theme (light & dark)
+        // - Toggle to change units (metric/imperial, locale (us/uk/ca), individual units)
+
+    // HorizontalScrollWrapper:
+        // - Test touch events on an actual touchscreen
+        // - Display something to show users Forecast elements are scrollable
+
+    // Hourly/DailyForecast
+        // - Add units
+        // - What other data might be useful to display?
+        // - Display data more clearly
+
+    
 
 function App() {
     const [coords, setCoords] = useState('');
@@ -35,7 +59,7 @@ function App() {
             setCurrentWeather(response.data.current);
         })
         .catch((error) => {
-            console.error(error); // !!! TODO: Error feedback for user
+            console.error(error);
         });
     }, [coords]);
 
@@ -64,7 +88,7 @@ function App() {
             setForecastData(forecastData);
         })
         .catch((error) => {
-            console.error(error); // !!! TODO: Error feedback for user
+            console.error(error);
         })
     }, [coords]);
 

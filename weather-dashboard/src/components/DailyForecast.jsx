@@ -1,10 +1,5 @@
 import { WiRaindrop } from 'weather-icons-react'
 
-// TODO:
-    // - Play around with size - font/icon size similar to CurrentWeather?
-    // - Include units
-    // - What other data could be included?
-
 const DailyForecast = ({ dayData }) => {
     const { date, day } = dayData;
 

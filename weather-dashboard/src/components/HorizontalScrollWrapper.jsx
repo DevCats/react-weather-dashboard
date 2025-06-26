@@ -1,9 +1,5 @@
 import { useRef } from 'react'
 
-// TODO:
-    // - Test touch events on a mobile device - Chrome dev tools isn't enough
-    // - Something to demonstrate to use that this is a scrollable element
-
 const HorizontalScrollWrapper = ({ children, className='' }) => {
     const scrollRef = useRef();
 
